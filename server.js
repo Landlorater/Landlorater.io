@@ -60,6 +60,6 @@ app.get('/api/reviews', (req, res) => {
 app.use(logger);
 app.use(express.static(path.join(__dirname, 'build')));
 
-// app.listen(3000, function() {
-//   console.log('server stared on port 3000')
-// });
+app.listen(3000, function() {
+  console.log('server stared on port 3000')
+});
