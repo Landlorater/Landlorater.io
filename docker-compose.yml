@@ -2,8 +2,8 @@ version: '3.5'
 
 services:
 
-  landlorater:
-    container_name: landlorater
+  landlorater.io:
+    container_name: landlorater.io
     build:
       context: .
       dockerfile: Dockerfile
