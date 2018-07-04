@@ -32,34 +32,34 @@ app.use(function (req, res, next) {
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-const MongoClient = require('mongodb').MongoClient
-var db
-MongoClient.connect(url, (err, client) => {
-  if (err) {
-    return console.log(err);
-  } else {
-    console.log('Conected to mongo url, ', url);
-    db = client.db('test')
-    app.listen(3100, () => {
-      console.log('listening on 3000')
-    })
-  }
-});
+// const MongoClient = require('mongodb').MongoClient
+// var db
+// MongoClient.connect(url, (err, client) => {
+//   if (err) {
+//     return console.log(err);
+//   } else {
+//     console.log('Conected to mongo url, ', url);
+//     db = client.db('test')
+//     app.listen(3100, () => {
+//       console.log('listening on 3000')
+//     })
+//   }
+// });
 
 app.get('/api/reviews', (req, res) => {
   console.log("connected")
-  db.collection('reviews').find().toArray(function (err, result) {
-    if (err) throw err
-
-    console.log(result)
-    res.json(result);
-  })
-
+//   db.collection('reviews').find().toArray(function (err, result) {
+//     if (err) throw err
+//
+//     console.log(result)
+//     res.json(result);
+//   })
+//
 });
 
 app.use(logger);
 app.use(express.static(path.join(__dirname, 'build')));
 
-// app.listen(3000, function() {
-//   console.log('server stared on port 3000')
-// });
+app.listen(3000, function() {
+  console.log('server stared on port 3000')
+});
